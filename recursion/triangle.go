@@ -12,10 +12,10 @@ func helper(triangle [][]int, row int, i int, memo map[[2]int]int) int {
 		return 0
 	}
 
-	_, ok := memo[[2]int{row, i}]
+	val, ok := memo[[2]int{row, i}]
 
 	if ok {
-		return memo[[2]int{row, i}]
+		return val
 	}
 
 	memo[[2]int{row, i}] = triangle[row][i] + min(helper(triangle, row+1, i, memo), helper(triangle, row+1, i+1, memo))
